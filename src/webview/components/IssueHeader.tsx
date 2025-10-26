@@ -1,7 +1,7 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { CardHeader, CardTitle } from "@/components/ui/card";
-import { formatDate } from "@/lib/utils";
+import { Badge } from "../../components/ui/badge";
+import { Button } from "../../components/ui/button";
+import { CardHeader, CardTitle } from "../../components/ui/card";
+import { formatDate } from "../../lib/utils";
 
 interface IssueHeaderProps {
 	number: number;

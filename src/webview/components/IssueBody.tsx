@@ -1,5 +1,5 @@
-import { CardContent } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { CardContent } from "../../components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "../../components/ui/avatar";
 
 interface IssueBodyProps {
 	body: string | null;

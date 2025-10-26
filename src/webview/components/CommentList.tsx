@@ -1,7 +1,7 @@
-import { CardContent } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Separator } from "@/components/ui/separator";
-import { formatDate } from "@/lib/utils";
+import { CardContent } from "../../components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "../../components/ui/avatar";
+import { Separator } from "../../components/ui/separator";
+import { formatDate } from "../../lib/utils";
 
 interface Comment {
 	id: number;

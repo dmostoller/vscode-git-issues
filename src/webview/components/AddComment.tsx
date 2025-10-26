@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { CardContent } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+import { CardContent } from "../../components/ui/card";
+import { Textarea } from "../../components/ui/textarea";
+import { Button } from "../../components/ui/button";
+import { Separator } from "../../components/ui/separator";
 
 interface AddCommentProps {
 	onAddComment: (body: string) => void;

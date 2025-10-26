@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Card } from '@/components/ui/card';
-import { IssueHeader } from '@/webview/components/IssueHeader';
-import { IssueBody } from '@/webview/components/IssueBody';
-import { CommentList } from '@/webview/components/CommentList';
-import { AddComment } from '@/webview/components/AddComment';
-import { useVSCodeAPI } from '@/webview/hooks/useVSCodeAPI';
+import { Card } from '../components/ui/card';
+import { IssueHeader } from './components/IssueHeader';
+import { IssueBody } from './components/IssueBody';
+import { CommentList } from './components/CommentList';
+import { AddComment } from './components/AddComment';
+import { useVSCodeAPI } from './hooks/useVSCodeAPI';
 
 interface Issue {
 	number: number;
