@@ -76,11 +76,17 @@ export class GitHubService {
 					owner: repoConfig.owner,
 					repo: repoConfig.repo,
 					issue_number: issueNumber,
+					mediaType: {
+						format: 'html'
+					}
 				}),
 				client.issues.listComments({
 					owner: repoConfig.owner,
 					repo: repoConfig.repo,
 					issue_number: issueNumber,
+					mediaType: {
+						format: 'html'
+					}
 				}),
 			]);
 

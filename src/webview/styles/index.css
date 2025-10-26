@@ -47,3 +47,133 @@ body {
 	background-color: var(--color-background);
 	color: var(--color-foreground);
 }
+
+/* GitHub Markdown Body Styles */
+.github-markdown-body {
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+.github-markdown-body h1,
+.github-markdown-body h2,
+.github-markdown-body h3,
+.github-markdown-body h4,
+.github-markdown-body h5,
+.github-markdown-body h6 {
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+	font-weight: 600;
+	line-height: 1.25;
+}
+
+.github-markdown-body h1 {
+	font-size: 1.5em;
+	border-bottom: 1px solid var(--color-border);
+	padding-bottom: 0.3em;
+}
+
+.github-markdown-body h2 {
+	font-size: 1.25em;
+	border-bottom: 1px solid var(--color-border);
+	padding-bottom: 0.3em;
+}
+
+.github-markdown-body h3 {
+	font-size: 1.1em;
+}
+
+.github-markdown-body h4,
+.github-markdown-body h5,
+.github-markdown-body h6 {
+	font-size: 1em;
+}
+
+.github-markdown-body p {
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+.github-markdown-body a {
+	color: var(--vscode-textLink-foreground);
+	text-decoration: none;
+}
+
+.github-markdown-body a:hover {
+	text-decoration: underline;
+}
+
+.github-markdown-body ul,
+.github-markdown-body ol {
+	margin-top: 0;
+	margin-bottom: 0.75em;
+	padding-left: 2em;
+}
+
+.github-markdown-body li {
+	margin-top: 0.25em;
+}
+
+.github-markdown-body code {
+	background-color: var(--vscode-textCodeBlock-background);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	font-family: var(--vscode-editor-font-family);
+	font-size: 0.9em;
+}
+
+.github-markdown-body pre {
+	background-color: var(--vscode-textCodeBlock-background);
+	border-radius: 6px;
+	padding: 1em;
+	overflow: auto;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+.github-markdown-body pre code {
+	background-color: transparent;
+	padding: 0;
+	font-size: inherit;
+}
+
+.github-markdown-body blockquote {
+	margin: 0;
+	padding-left: 1em;
+	border-left: 0.25em solid var(--color-border);
+	color: var(--color-muted-foreground);
+	margin-bottom: 0.75em;
+}
+
+.github-markdown-body table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 0.75em;
+}
+
+.github-markdown-body table th,
+.github-markdown-body table td {
+	padding: 6px 13px;
+	border: 1px solid var(--color-border);
+}
+
+.github-markdown-body table th {
+	font-weight: 600;
+	background-color: var(--color-muted);
+}
+
+.github-markdown-body img {
+	max-width: 100%;
+	height: auto;
+}
+
+.github-markdown-body hr {
+	height: 0.25em;
+	padding: 0;
+	margin: 1.5em 0;
+	background-color: var(--color-border);
+	border: 0;
+}
+
+.github-markdown-body input[type="checkbox"] {
+	margin-right: 0.5em;
+}

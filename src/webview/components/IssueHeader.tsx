@@ -21,8 +21,8 @@ export function IssueHeader({ number, title, state, user, created_at, labels, on
 	return (
 		<CardHeader>
 			<div className="flex items-start justify-between gap-4">
-				<div className="flex-1 space-y-2">
-					<CardTitle className="text-xl">#{number}: {title}</CardTitle>
+				<div className="flex-1 min-w-0 space-y-2">
+					<CardTitle className="text-xl break-words">#{number}: {title}</CardTitle>
 					<div className="flex items-center gap-2 text-sm text-muted-foreground">
 						<Badge variant={state === 'open' ? 'default' : 'secondary'}>
 							{state === 'open' ? 'Open' : 'Closed'}

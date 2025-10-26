@@ -10,6 +10,7 @@ interface Comment {
 		avatar_url: string;
 	} | null;
 	body: string;
+	body_html?: string;
 	created_at: string;
 	updated_at: string;
 }
@@ -34,13 +35,17 @@ export function CommentList({ comments }: CommentListProps) {
 							<AvatarImage src={comment.user?.avatar_url} alt={comment.user?.login || 'User'} />
 							<AvatarFallback>{comment.user?.login?.[0]?.toUpperCase() || '?'}</AvatarFallback>
 						</Avatar>
-						<div className="flex-1 space-y-2">
+						<div className="flex-1 min-w-0 space-y-2">
 							<div className="flex items-center gap-2 text-sm">
 								<span className="font-medium">{comment.user?.login || 'Unknown'}</span>
 								<span className="text-muted-foreground">commented {formatDate(comment.created_at)}</span>
 							</div>
-							<div className="text-sm whitespace-pre-wrap rounded-md border bg-muted/50 p-4">
-								{comment.body}
+							<div className="github-markdown-body text-sm rounded-md border bg-muted/50 p-4">
+								{comment.body_html ? (
+									<div dangerouslySetInnerHTML={{ __html: comment.body_html }} />
+								) : (
+									<div className="whitespace-pre-wrap break-words">{comment.body}</div>
+								)}
 							</div>
 						</div>
 					</div>

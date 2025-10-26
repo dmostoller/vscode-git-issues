@@ -10,6 +10,7 @@ interface Issue {
 	number: number;
 	title: string;
 	body: string | null;
+	body_html?: string;
 	state: 'open' | 'closed';
 	user: {
 		login: string;
@@ -37,6 +38,7 @@ interface Comment {
 		avatar_url: string;
 	} | null;
 	body: string;
+	body_html?: string;
 	created_at: string;
 	updated_at: string;
 }
@@ -48,7 +50,7 @@ function App() {
 	const { postMessage, onMessage } = useVSCodeAPI();
 
 	useEffect(() => {
-		const cleanup = onMessage((event) => {
+		const cleanup = onMessage((event: MessageEvent) => {
 			const message = event.data;
 
 			switch (message.command) {
@@ -137,7 +139,7 @@ function App() {
 
 	return (
 		<div className="container max-w-4xl mx-auto p-8">
-			<Card>
+			<Card className="overflow-hidden">
 				<IssueHeader
 					number={issue.number}
 					title={issue.title}
@@ -148,7 +150,7 @@ function App() {
 					onClose={handleClose}
 					onReopen={handleReopen}
 				/>
-				<IssueBody body={issue.body} user={issue.user} />
+				<IssueBody body={issue.body} body_html={issue.body_html} user={issue.user} />
 				<CommentList comments={issue.comment_list} />
 				<AddComment onAddComment={handleAddComment} />
 			</Card>

@@ -4,6 +4,7 @@ export interface GitHubIssue {
 	number: number;
 	title: string;
 	body: string | null;
+	body_html?: string;
 	state: 'open' | 'closed';
 	user: {
 		login: string;
@@ -30,6 +31,7 @@ export interface GitHubComment {
 		avatar_url: string;
 	} | null;
 	body: string;
+	body_html?: string;
 	created_at: string;
 	updated_at: string;
 }
