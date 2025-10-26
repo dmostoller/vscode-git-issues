@@ -1,0 +1,137 @@
+{
+  "name": "github-issues",
+  "displayName": "GitHub Issues",
+  "description": "View and manage GitHub issues with a polished React-based webview interface",
+  "version": "0.0.1",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:githubIssuesExplorer"
+  ],
+  "main": "./out/extension/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "github-issues-explorer",
+          "title": "GitHub Issues",
+          "icon": "resources/github-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "github-issues-explorer": [
+        {
+          "id": "githubIssuesExplorer",
+          "name": "Issues"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "github-issues.configureRepository",
+        "title": "GitHub Issues: Configure Repository"
+      },
+      {
+        "command": "github-issues.refreshIssues",
+        "title": "GitHub Issues: Refresh Issues",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "github-issues.createIssue",
+        "title": "GitHub Issues: Create New Issue"
+      },
+      {
+        "command": "github-issues.signIn",
+        "title": "GitHub Issues: Sign In"
+      },
+      {
+        "command": "github-issues.openIssue",
+        "title": "Open Issue"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "github-issues.refreshIssues",
+          "when": "view == githubIssuesExplorer",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "GitHub Issues",
+      "properties": {
+        "githubIssues.owner": {
+          "type": "string",
+          "default": "",
+          "description": "GitHub repository owner (username or organization)"
+        },
+        "githubIssues.repo": {
+          "type": "string",
+          "default": "",
+          "description": "GitHub repository name"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run build",
+    "build": "pnpm run build:extension && pnpm run build:webview",
+    "build:extension": "tsc -p ./tsconfig.json",
+    "build:webview": "vite build",
+    "watch": "concurrently \"tsc -watch -p ./tsconfig.json\" \"vite build --watch --mode development\"",
+    "compile": "pnpm run build",
+    "pretest": "pnpm run build && pnpm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@octokit/rest": "^20.0.0",
+    "cmdk": "^1.1.1",
+    "date-fns": "^4.1.0",
+    "embla-carousel-react": "^8.6.0",
+    "input-otp": "^1.4.2",
+    "next-themes": "^0.4.6",
+    "radix-ui": "latest",
+    "react-day-picker": "^9.11.1",
+    "react-hook-form": "^7.65.0",
+    "react-resizable-panels": "^3.0.6",
+    "recharts": "2.15.4",
+    "sonner": "^2.0.7",
+    "vaul": "^1.1.2",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.16",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
+    "@typescript-eslint/parser": "^8.45.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^2.22.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "concurrently": "^8.2.0",
+    "eslint": "^9.36.0",
+    "lucide-react": "^0.344.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss": "^4.1.16",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0"
+  }
+}

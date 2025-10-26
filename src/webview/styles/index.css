@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer theme {
+	:root {
+		/* VSCode-mapped colors */
+		--color-border: var(--vscode-panel-border);
+		--color-input: var(--vscode-input-background);
+		--color-ring: var(--vscode-focusBorder);
+		--color-background: var(--vscode-editor-background);
+		--color-foreground: var(--vscode-editor-foreground);
+
+		--color-primary: var(--vscode-button-background);
+		--color-primary-foreground: var(--vscode-button-foreground);
+
+		--color-secondary: var(--vscode-button-secondaryBackground);
+		--color-secondary-foreground: var(--vscode-button-secondaryForeground);
+
+		--color-destructive: var(--vscode-errorForeground);
+		--color-destructive-foreground: var(--vscode-errorForeground);
+
+		--color-muted: var(--vscode-input-background);
+		--color-muted-foreground: var(--vscode-descriptionForeground);
+
+		--color-accent: var(--vscode-list-activeSelectionBackground);
+		--color-accent-foreground: var(--vscode-list-activeSelectionForeground);
+
+		--color-card: var(--vscode-editor-background);
+		--color-card-foreground: var(--vscode-editor-foreground);
+
+		--color-popover: var(--vscode-editor-background);
+		--color-popover-foreground: var(--vscode-editor-foreground);
+
+		/* Radius */
+		--radius: 0.5rem;
+		--radius-sm: calc(var(--radius) - 4px);
+		--radius-md: calc(var(--radius) - 2px);
+		--radius-lg: var(--radius);
+		--radius-xl: calc(var(--radius) + 4px);
+	}
+}
+
+* {
+	border-color: var(--color-border);
+}
+
+body {
+	background-color: var(--color-background);
+	color: var(--color-foreground);
+}
